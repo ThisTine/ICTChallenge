@@ -11,24 +11,15 @@
 </script>
 
 <Router>
-	<Route path="/">
-		<Preview />
-	</Route>
-	<Route path="/about">
-		<About />
-	</Route>
-	<Route path="/podium">
-		<Podium />
-	</Route>
+<!--	WE USE THIS -->
 	<Route path="/leaderboard">
 		<Leaderboard />
 	</Route>
+	<!--	WE USE THIS -->
 	<Route path="/question">
 		<Questions />
 	</Route>
-	<Route path="/student">
-		<StudentPage />
-	</Route>
+	<!--	WE USE THIS -->
 	<Route path="/admin">
 		<AdminPage />
 	</Route>
