@@ -1,11 +1,13 @@
-lockfileVersion: 5.4
+lockfileVersion: 5.3
 
 specifiers:
   '@sveltejs/vite-plugin-svelte': ^1.0.2
   '@tsconfig/svelte': ^3.0.0
+  '@types/axios': ^0.14.0
   autoprefixer: ^10.4.7
-  axios: ^1.1.3
+  axios: ^0.27.2
   lottie-svelte: ^1.3.3
+  nanoid: ^4.0.0
   postcss: ^8.4.14
   postcss-load-config: ^4.0.1
   prettier: ^2.7.1
@@ -13,33 +15,35 @@ specifiers:
   sass: ^1.55.0
   svelte: ^3.49.0
   svelte-check: ^2.8.1
-  svelte-loading-spinners: ^0.3.4
   svelte-navigator: ^3.2.2
   svelte-preprocess: ^4.10.7
+  sweetalert2: ^11.6.11
   tailwindcss: ^3.1.5
   tslib: ^2.4.0
   typescript: ^4.6.4
   vite: ^3.1.0
 
 dependencies:
-  axios: 1.1.3
+  axios: 0.27.2
   lottie-svelte: 1.3.3
-  svelte-loading-spinners: 0.3.4
-  svelte-navigator: 3.2.2_besnmoibwkhwtentvwuriss7pa
+  nanoid: 4.0.0
+  svelte-navigator: 3.2.2_svelte@3.52.0+typescript@4.8.4
+  sweetalert2: 11.6.11
 
 devDependencies:
   '@sveltejs/vite-plugin-svelte': 1.0.9_svelte@3.52.0+vite@3.1.8
   '@tsconfig/svelte': 3.0.0
+  '@types/axios': 0.14.0
   autoprefixer: 10.4.12_postcss@8.4.18
   postcss: 8.4.18
   postcss-load-config: 4.0.1_postcss@8.4.18
   prettier: 2.7.1
-  prettier-plugin-svelte: 2.8.0_lrllcp5xtrkmmdzifit4hd52ze
+  prettier-plugin-svelte: 2.8.0_prettier@2.7.1+svelte@3.52.0
   sass: 1.55.0
   svelte: 3.52.0
-  svelte-check: 2.9.2_6kphpwy4fhfe72zv6gcb25i4zi
-  svelte-preprocess: 4.10.7_42yvvk6nsmw64yb5ungflkjnci
-  tailwindcss: 3.2.1_postcss@8.4.18
+  svelte-check: 2.9.2_f29e77db1c29ca4feb35f1841d751cca
+  svelte-preprocess: 4.10.7_e6b15aabcd932dee603da34c55a92d12
+  tailwindcss: 3.2.1
   tslib: 2.4.0
   typescript: 4.8.4
   vite: 3.1.8_sass@1.55.0
@@ -136,6 +140,15 @@ packages:
     resolution: {integrity: sha512-pYrtLtOwku/7r1i9AMONsJMVYAtk3hzOfiGNekhtq5tYBGA7unMve8RvUclKLMT3PrihvJqUmzsRGh0RP84hKg==}
     dev: true
 
+  /@types/axios/0.14.0:
+    resolution: {integrity: sha512-KqQnQbdYE54D7oa/UmYVMZKq7CO4l8DEENzOKc4aBRwxCXSlJXGz83flFx5L7AWrOQnmuN3kVsRdt+GZPPjiVQ==}
+    deprecated: This is a stub types definition for axios (https://github.com/mzabriskie/axios). axios provides its own type definitions, so you don't need @types/axios installed!
+    dependencies:
+      axios: 1.2.0
+    transitivePeerDependencies:
+      - debug
+    dev: true
+
   /@types/node/18.11.3:
     resolution: {integrity: sha512-fNjDQzzOsZeKZu5NATgXUPsaFaTxeRgFXoosrHivTl8RGeV733OLawXsGfEk9a8/tySyZUyiZ6E8LcjPFZ2y1A==}
     dev: true
@@ -183,7 +196,6 @@ packages:
 
   /asynckit/0.4.0:
     resolution: {integrity: sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==}
-    dev: false
 
   /autoprefixer/10.4.12_postcss@8.4.18:
     resolution: {integrity: sha512-WrCGV9/b97Pa+jtwf5UGaRjgQIg7OK3D06GnoYoZNcG1Xb8Gt3EfuKjlhh9i/VtT16g6PYjZ69jdJ2g8FxSC4Q==}
@@ -201,15 +213,24 @@ packages:
       postcss-value-parser: 4.2.0
     dev: true
 
-  /axios/1.1.3:
-    resolution: {integrity: sha512-00tXVRwKx/FZr/IDVFt4C+f9FYairX517WoGCL6dpOntqLkZofjhu43F/Xl44UOpqa+9sLFDrG/XAnFsUYgkDA==}
+  /axios/0.27.2:
+    resolution: {integrity: sha512-t+yRIyySRTp/wua5xEr+z1q60QmLq8ABsS5O9Me1AsE5dfKqgnCFzwiCZZ/cGNd1lq4/7akDWMxdhVlucjmnOQ==}
+    dependencies:
+      follow-redirects: 1.15.2
+      form-data: 4.0.0
+    transitivePeerDependencies:
+      - debug
+    dev: false
+
+  /axios/1.2.0:
+    resolution: {integrity: sha512-zT7wZyNYu3N5Bu0wuZ6QccIf93Qk1eV8LOewxgjOZFd2DenOs98cJ7+Y6703d0wkaXGY6/nZd4EweJaHz9uzQw==}
     dependencies:
       follow-redirects: 1.15.2
       form-data: 4.0.0
       proxy-from-env: 1.1.0
     transitivePeerDependencies:
       - debug
-    dev: false
+    dev: true
 
   /balanced-match/1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
@@ -287,7 +308,6 @@ packages:
     engines: {node: '>= 0.8'}
     dependencies:
       delayed-stream: 1.0.0
-    dev: false
 
   /concat-map/0.0.1:
     resolution: {integrity: sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=}
@@ -327,7 +347,6 @@ packages:
   /delayed-stream/1.0.0:
     resolution: {integrity: sha512-ZySD7Nf91aLB0RxL4KGrKHBXl7Eds1DAmEdcoVawXnLD7SDhpNgtuII2aAkg7a7QS41jxPSZ17p4VdGnMHk3MQ==}
     engines: {node: '>=0.4.0'}
-    dev: false
 
   /detect-indent/6.1.0:
     resolution: {integrity: sha512-reYkTUJAZb9gUuZ2RvVCNhVHdg62RHnJ7WJl8ftMi4diZ6NWlciOzQN88pUhSELEwflJht4oQDv0F0BMlwaYtA==}
@@ -611,7 +630,6 @@ packages:
     peerDependenciesMeta:
       debug:
         optional: true
-    dev: false
 
   /form-data/4.0.0:
     resolution: {integrity: sha512-ETEklSGi5t0QMZuiXoA/Q6vcnxcLQP5vdugSpuAyi6SVGi2clPPp+xgEhuMaHC+zGgn31Kd235W35f7Hykkaww==}
@@ -620,7 +638,6 @@ packages:
       asynckit: 0.4.0
       combined-stream: 1.0.8
       mime-types: 2.1.35
-    dev: false
 
   /fraction.js/4.2.0:
     resolution: {integrity: sha512-MhLuK+2gUcnZe8ZHlaaINnQLl0xRIGRfcGk2yl8xoQAfHrSsL3rYu6FCmBdkdbhc9EPlwyGHewaRsvwRMJtAlA==}
@@ -786,14 +803,12 @@ packages:
   /mime-db/1.52.0:
     resolution: {integrity: sha512-sPU4uV7dYlvtWJxwwxHD0PuihVNiE7TyAbQ5SWxDCB9mUYvOgroQOwYQQOKPJ8CIbE+1ETVlOoK1UC2nU3gYvg==}
     engines: {node: '>= 0.6'}
-    dev: false
 
   /mime-types/2.1.35:
     resolution: {integrity: sha512-ZDY+bPm5zTTF+YpCrAU9nK0UgICYPT0QtT1NZWFv4s++TNkcgVaT0g6+4R2uI4MjQjzysHB1zxuWL50hzaeXiw==}
     engines: {node: '>= 0.6'}
     dependencies:
       mime-db: 1.52.0
-    dev: false
 
   /min-indent/1.0.1:
     resolution: {integrity: sha512-I9jwMn07Sy/IwOj3zVkVik2JTvgpaykDZEigL6Rx6N9LbMywwUSMtxET+7lVoDLLd3O3IXwJwvuuns8UB/HeAg==}
@@ -831,6 +846,12 @@ packages:
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
     dev: true
+
+  /nanoid/4.0.0:
+    resolution: {integrity: sha512-IgBP8piMxe/gf73RTQx7hmnhwz0aaEXYakvqZyE302IXW3HyVNhdNGC+O2MwMAVhLEnvXlvKtGbtJf6wvHihCg==}
+    engines: {node: ^14 || ^16 || >=18}
+    hasBin: true
+    dev: false
 
   /no-case/3.0.4:
     resolution: {integrity: sha512-fgAN3jGAh+RoxUGZHTSOLJIqUc2wmoBwGR4tbpNAKmmovFoWq0OdRkb0VkldReO2a2iBT/OEulG9XSUc10r3zg==}
@@ -988,7 +1009,7 @@ packages:
       source-map-js: 1.0.2
     dev: true
 
-  /prettier-plugin-svelte/2.8.0_lrllcp5xtrkmmdzifit4hd52ze:
+  /prettier-plugin-svelte/2.8.0_prettier@2.7.1+svelte@3.52.0:
     resolution: {integrity: sha512-QlXv/U3bUszks3XYDPsk1fsaQC+fo2lshwKbcbO+lrSVdJ+40mB1BfL8OCAk1W9y4pJxpqO/4gqm6NtF3zNGCw==}
     peerDependencies:
       prettier: ^1.16.4 || ^2.0.0
@@ -1006,7 +1027,7 @@ packages:
 
   /proxy-from-env/1.1.0:
     resolution: {integrity: sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==}
-    dev: false
+    dev: true
 
   /queue-microtask/1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
@@ -1127,7 +1148,7 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /svelte-check/2.9.2_6kphpwy4fhfe72zv6gcb25i4zi:
+  /svelte-check/2.9.2_f29e77db1c29ca4feb35f1841d751cca:
     resolution: {integrity: sha512-DRi8HhnCiqiGR2YF9ervPGvtoYrheE09cXieCTEqeTPOTJzfoa54Py8rovIBv4bH4n5HgZYIyTQ3DDLHQLl2uQ==}
     hasBin: true
     peerDependencies:
@@ -1140,7 +1161,7 @@ packages:
       picocolors: 1.0.0
       sade: 1.8.1
       svelte: 3.52.0
-      svelte-preprocess: 4.10.7_42yvvk6nsmw64yb5ungflkjnci
+      svelte-preprocess: 4.10.7_e6b15aabcd932dee603da34c55a92d12
       typescript: 4.8.4
     transitivePeerDependencies:
       - '@babel/core'
@@ -1164,22 +1185,18 @@ packages:
       svelte: 3.52.0
     dev: true
 
-  /svelte-loading-spinners/0.3.4:
-    resolution: {integrity: sha512-vKaW71QMCBcTNijAGc0mUl8k3DQ66iYmp6MB8BMGCXyWk82bTrcLy8FOnSm9fE+8q6TwzD6PLUoYFHt0II93Xw==}
-    dev: false
-
-  /svelte-navigator/3.2.2_besnmoibwkhwtentvwuriss7pa:
+  /svelte-navigator/3.2.2_svelte@3.52.0+typescript@4.8.4:
     resolution: {integrity: sha512-Xio4ohLUG1nQJ+ENNbLphXXu9L189fnI1WGg+2Q3CIMPe8Jm2ipytKQthdBs8t0mN7p3Eb03SE9hq0xZAqwQNQ==}
     peerDependencies:
       svelte: 3.x
     dependencies:
       svelte: 3.52.0
-      svelte2tsx: 0.1.193_besnmoibwkhwtentvwuriss7pa
+      svelte2tsx: 0.1.193_svelte@3.52.0+typescript@4.8.4
     transitivePeerDependencies:
       - typescript
     dev: false
 
-  /svelte-preprocess/4.10.7_42yvvk6nsmw64yb5ungflkjnci:
+  /svelte-preprocess/4.10.7_e6b15aabcd932dee603da34c55a92d12:
     resolution: {integrity: sha512-sNPBnqYD6FnmdBrUmBCaqS00RyCsCpj2BG58A1JBswNF7b0OKviwxqVrOL/CKyJrLSClrSeqQv5BXNg2RUbPOw==}
     engines: {node: '>= 9.11.2'}
     requiresBuild: true
@@ -1236,8 +1253,9 @@ packages:
   /svelte/3.52.0:
     resolution: {integrity: sha512-FxcnEUOAVfr10vDU5dVgJN19IvqeHQCS1zfe8vayTfis9A2t5Fhx+JDe5uv/C3j//bB1umpLJ6quhgs9xyUbCQ==}
     engines: {node: '>= 8'}
+    dev: true
 
-  /svelte2tsx/0.1.193_besnmoibwkhwtentvwuriss7pa:
+  /svelte2tsx/0.1.193_svelte@3.52.0+typescript@4.8.4:
     resolution: {integrity: sha512-vzy4YQNYDnoqp2iZPnJy7kpPAY6y121L0HKrSBjU/IWW7DQ6T7RMJed2VVHFmVYm0zAGYMDl9urPc6R4DDUyhg==}
     peerDependencies:
       svelte: ^3.24
@@ -1249,12 +1267,14 @@ packages:
       typescript: 4.8.4
     dev: false
 
-  /tailwindcss/3.2.1_postcss@8.4.18:
+  /sweetalert2/11.6.11:
+    resolution: {integrity: sha512-KFMJWyvOdWkFY5shMYJdBPUwwU/1WoYfRx0uSvvxUYm6vSENUUuoXBOo2oGT/PMnEPsHAZyOrOVUZ1WCOccM7w==}
+    dev: false
+
+  /tailwindcss/3.2.1:
     resolution: {integrity: sha512-Uw+GVSxp5CM48krnjHObqoOwlCt5Qo6nw1jlCRwfGy68dSYb/LwS9ZFidYGRiM+w6rMawkZiu1mEMAsHYAfoLg==}
     engines: {node: '>=12.13.0'}
     hasBin: true
-    peerDependencies:
-      postcss: ^8.0.9
     dependencies:
       arg: 5.0.2
       chokidar: 3.5.3
@@ -1297,6 +1317,7 @@ packages:
     resolution: {integrity: sha512-QCh+85mCy+h0IGff8r5XWzOVSbBO+KfeYrMQh7NJ58QujwcE22u+NUSmUxqF+un70P9GXKxa2HCNiTTMJknyjQ==}
     engines: {node: '>=4.2.0'}
     hasBin: true
+    dev: true
 
   /update-browserslist-db/1.0.10_browserslist@4.21.4:
     resolution: {integrity: sha512-OztqDenkfFkbSG+tRxBeAnCVPckDBcvibKd35yDONx6OU8N7sqgwc7rCbkJ/WcYtVRZ4ba68d6byhC21GFh7sQ==}
