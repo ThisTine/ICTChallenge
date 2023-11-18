@@ -7,6 +7,7 @@
 	import { onDestroy } from 'svelte'
 	import { flip } from 'svelte/animate'
 	import Preview from './Preview.svelte'
+	import {urlParser} from "../utils/urlParser";
 
 	let mode = 'preview'
 	let teams: Array<Team> = []
@@ -15,7 +16,7 @@
 	let teamsPodium: Array<Team> = []
     let teamsBoard: Array<Team> = []
 	const client = ArtWS.connect(
-	'ws://ictc-int.sit.kmutt.ac.th:3000/ws/projector/leaderboard?token=wdvXuDOytfx84J8d',
+			urlParser("WS","/ws/projector/leaderboard",true),
 		{
 			log: true, // Log for console.warning
 			reconnect: true, // Reconnect on close
