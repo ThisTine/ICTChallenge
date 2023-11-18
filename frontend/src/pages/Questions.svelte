@@ -7,13 +7,14 @@
 	import { onDestroy } from 'svelte'
 
 	import { Circle } from 'svelte-loading-spinners'
+	import {urlParser} from "../utils/urlParser";
 
 	let questions: Question
 
 	let openQuestion: OpenQuestion
 
 	const client = ArtWS.connect(
-		'ws://ictc-int.sit.kmutt.ac.th:3000/ws/projector/card?token=wdvXuDOytfx84J8d',
+		urlParser("WS","ws/projector/card",true),
 		{
 			log: true, // Log for console.warning
 			reconnect: true, // Reconnect on close
